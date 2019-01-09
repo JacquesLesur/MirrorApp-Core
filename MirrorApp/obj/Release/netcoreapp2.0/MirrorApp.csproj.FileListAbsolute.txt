@@ -1,0 +1,11 @@
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\bin\Release\netcoreapp2.0\MirrorApp.deps.json
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\bin\Release\netcoreapp2.0\MirrorApp.runtimeconfig.json
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\bin\Release\netcoreapp2.0\MirrorApp.runtimeconfig.dev.json
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\bin\Release\netcoreapp2.0\MirrorApp.dll
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\bin\Release\netcoreapp2.0\MirrorApp.pdb
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.csprojResolveAssemblyReference.cache
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.csproj.CoreCompileInputs.cache
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.AssemblyInfoInputs.cache
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.AssemblyInfo.cs
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.dll
+C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Release\netcoreapp2.0\MirrorApp.pdb
