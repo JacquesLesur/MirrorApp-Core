@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Alexa.NET/1.5.7": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Alexa.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Alexa.NET.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -4750,6 +4763,17 @@
     }
   },
   "libraries": {
+    "Alexa.NET/1.5.7": {
+      "sha512": "Swk3O8cz/x9Yvj92Eru8BcfcBV2MPapVz4NvOqX6OJrMGxK10wkw5EyqR/X3WDkPuJ6iwPrN4oJw4UyJA6brCw==",
+      "type": "package",
+      "path": "alexa.net/1.5.7",
+      "files": [
+        ".signature.p7s",
+        "alexa.net.1.5.7.nupkg.sha512",
+        "alexa.net.nuspec",
+        "lib/netstandard1.6/Alexa.NET.dll"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -12533,6 +12557,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Alexa.NET >= 1.5.7",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -12581,6 +12606,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Alexa.NET": {
+            "target": "Package",
+            "version": "[1.5.7, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.6, )"

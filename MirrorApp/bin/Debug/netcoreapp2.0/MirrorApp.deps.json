@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "86a062ac6f695f109b50d8949c1e6b958f65bfbe"
+    "signature": "e2e6f1d30fb2e0125d67f49f639adc0423cfed6e"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "MirrorApp/1.0.0": {
         "dependencies": {
+          "Alexa.NET": "1.5.7",
           "Microsoft.AspNetCore.All": "2.0.6",
           "Microsoft.NETCore.App": "2.0.0"
         },
@@ -31,6 +32,18 @@
         },
         "compile": {
           "MirrorApp.dll": {}
+        }
+      },
+      "Alexa.NET/1.5.7": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Alexa.NET.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Alexa.NET.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3977,6 +3990,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Alexa.NET/1.5.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Swk3O8cz/x9Yvj92Eru8BcfcBV2MPapVz4NvOqX6OJrMGxK10wkw5EyqR/X3WDkPuJ6iwPrN4oJw4UyJA6brCw==",
+      "path": "alexa.net/1.5.7",
+      "hashPath": "alexa.net.1.5.7.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
