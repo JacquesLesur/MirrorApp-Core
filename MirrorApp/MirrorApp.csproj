@@ -14,4 +14,13 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\Weather\brouillard.png" />
+    <None Include="wwwroot\images\Weather\chutes de neige.png" />
+    <None Include="wwwroot\images\Weather\couvert.png" />
+    <None Include="wwwroot\images\Weather\ensoleiller.png" />
+    <None Include="wwwroot\images\Weather\nuageux.png" />
+    <None Include="wwwroot\images\Weather\peu nuageux.png" />
+  </ItemGroup>
+
 </Project>

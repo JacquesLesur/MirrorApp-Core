@@ -7,7 +7,9 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MirrorApp.Models;
+using MMirrorApp.Models;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace MirrorApp.Controllers
 {
@@ -17,45 +19,50 @@ namespace MirrorApp.Controllers
         {
             
             ViewBag.kaamelott = Kaamelott();
+            ViewBag.weather = Weather();
+            ViewBag.news = News().articles;
             return View();
         }
-        //private void News()
-        //{
-        //    string bodyResp = ApiCall(Config.newsUrl.concat());
-        //    if (!String.IsNullOrEmpty(bodyResp))
-        //    {
-        //        NewsApi newsResponse = JsonConvert.DeserializeObject<NewsApi>(bodyResp);
-        //        lNews.ItemsSource = newsResponse.articles;
+        private NewsApi News()
+        {
+            string bodyResp = ApiCall(Config.newsUrl.concat());
+            if (!String.IsNullOrEmpty(bodyResp))
+            {
+                return JsonConvert.DeserializeObject<NewsApi>(bodyResp);
+                
 
-        //    }
+            }
+            else
+            {
+                return new NewsApi();
+            }
 
-        //}
+        }
 
-        //private void Date()
-        //{
-        //    var date = DateTime.Now;
-        //    lHour.Text = date.Hour.ToString() + "h" + date.Minute.ToString();
-        //}
-        //private void Weather()
-        //{
-        //    string bodyResp = ApiCall(Config.wetherUrl.concat());
-        //    WeatherApi weatherResponse = JsonConvert.DeserializeObject<WeatherApi>(bodyResp);
-        //    lWeather.Text = weatherResponse.weather.First().description.ToUpper();
-        //    lTemp.Text = weatherResponse.main.temp.ToString() + "°";
-        //    string imagesFolder = @"\Assets\Images\Weather\";
-        //    StorageFolder InstallationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-        //    string pathLogo = InstallationFolder.Path + imagesFolder + lWeather.Text + ".png";
-        //    if (File.Exists(pathLogo))
-        //    {
-        //        iWeather.Source = new BitmapImage(new Uri(pathLogo));
-        //    }
-        //    else
-        //    {
-        //        string test = InstallationFolder.Path + imagesFolder + "ensoleiller.png";
-        //        iWeather.Source = new BitmapImage(new Uri(InstallationFolder.Path + imagesFolder + "ensoleiller.png"));
-        //    }
-
-        //}
+        
+        private List<string> Weather()
+        {
+            List<string> returnStrings = new List<string>();
+            string bodyResp = ApiCall(Config.wetherUrl.concat());
+            WeatherApi weatherResponse = JsonConvert.DeserializeObject<WeatherApi>(bodyResp);
+            returnStrings.Add(weatherResponse.weather.First().description.ToUpper());
+            returnStrings.Add( weatherResponse.main.temp.ToString() + "°");
+            string imagesFolder = @"~/images/Weather/";
+            string pathLogo =  imagesFolder + weatherResponse.weather.First().description + ".png";
+            if (System.IO.File.Exists(pathLogo))
+            {
+                returnStrings.Add(pathLogo);
+            }
+            else if (returnStrings.First().Contains("PLUIE"))
+            {
+                returnStrings.Add(@"/images/Weather/pluie.png");
+            }
+            else
+            {
+                returnStrings.Add(@"/images/Weather/couvert.png");
+            }
+            return returnStrings;
+        }
         private string Kaamelott()
         {
 
@@ -105,5 +112,8 @@ namespace MirrorApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
     }
 }

@@ -1,9 +1,103 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-sm-12 text-center">
+            <div class="col-sm-4 text-center">
+                <label for="date">@DateTime.Now.ToString("dddd d MMMM")</label>
+            </div>
+            <div class="col-sm-4 text-center">
+                <label for="heure">@DateTime.Now.ToString("t")</label>
+            </div>
+            <div class="col-md-4 d-flex flex-column text-center">
+                
+                <div class="d-block " for="Meteo" style="font-size:15px">@ViewBag.weather[0]</div>
+                <img class="d-block " src="@ViewBag.weather[2]" runat="server" alt="meteo" />
+                <div class="d-block " for="Meteo">@ViewBag.weather[1]</div>
 
-
-
-<div class="row modal-title">
-    @ViewBag.kaamelott
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 news">
+            <label for="news">News</label>
+            <ul class="nav flex-column">
+                @foreach (Article article in ViewBag.news)
+                {
+                    <li class="nav-item">
+                        <span>@article.source.name</span>
+                        <a>@article.description</a>
+                    </li>
+                }
+                
+            </ul>
+        </div>
+    </div>
 </div>
+<footer class="footer" style="background-color:black">
+    <div class="row">
+        <div class="col-sm-12">
+            <label for="citation">@ViewBag.kaamelott</label>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    body {
+        background-color: black;
+        color: white;
+    }
+
+        body a {
+            color: white;
+        }
+
+    .header {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .header label {
+            font-size: 40px;
+            padding-top: 10%;
+        }
+
+    .news {
+        border-right: 1px solid white;
+        height: 80%;
+    }
+
+        .news span {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        color: white;
+        text-align: center;
+        border-top: 1px solid white;
+    }
+
+        footer label {
+            padding-top: 3%;
+        }
+</style>
+
+

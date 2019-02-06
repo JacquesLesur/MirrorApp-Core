@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -13,6 +14,9 @@ namespace MirrorApp
     {
         public Startup(IConfiguration configuration)
         {
+            var cultureInfo = new CultureInfo("fr-FR");
+
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             Configuration = configuration;
         }
 
