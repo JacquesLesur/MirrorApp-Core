@@ -1,35 +1,25 @@
-﻿using System;
+﻿using Alexa.NET.Request;
+using Alexa.NET.Response;
+using Microsoft.AspNetCore.Mvc;
+using MirrorApp.Worker;
 using System.Net.Http;
-using System.Web.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MirrorApp.Controllers
 {
     [Route("api/[controller]")]
-    public class AlexaController : Controller
+    [ApiController]
+    public class AlexaController : ControllerBase
     {
-        [Route("")]
-        [HttpGet]
-        [HttpHead]
-        public IHttpActionResult root()
-        {
-            return this.Ok("Im Alive");
-        }
-        [Route("api/alexaSample")]
         [HttpPost]
-        public HttpResponseMessage AlexaSampleRequest()
-        {
-            var speechlet = new AlexaResponse();
-            return speechlet.GetResponse(Request);
-        }
         [Route("")]
-        [HttpPost]
-        public HttpResponseMessage Post()
+        public SkillResponse post(SkillRequest input)
 
         {
-            return new AlexaResponse().g(Request);
+            AlexaResponse alexaResponse = new AlexaResponse(input);
 
+            return alexaResponse.response;
         }
     }
 }

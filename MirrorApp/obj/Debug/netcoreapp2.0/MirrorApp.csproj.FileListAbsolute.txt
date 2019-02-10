@@ -9,3 +9,9 @@ C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\D
 C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.AssemblyInfo.cs
 C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.dll
 C:\Users\Jacques\Documents\Visual Studio 2017\Projects\MirrorApp\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.pdb
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.csprojAssemblyReference.cache
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.csproj.CoreCompileInputs.cache
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.AssemblyInfoInputs.cache
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.AssemblyInfo.cs
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.dll
+C:\Users\Jacques\Documents\GitHub\MirrorApp-Core\MirrorApp\obj\Debug\netcoreapp2.0\MirrorApp.pdb
