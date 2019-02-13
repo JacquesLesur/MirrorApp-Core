@@ -15,6 +15,22 @@
           "lib/netstandard1.6/Alexa.NET.dll": {}
         }
       },
+      "CloudRail.SDK/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "OpenSSL.X509Certificate2.Provider": "1.2.0"
+        },
+        "compile": {
+          "lib/CloudrailSI.dll": {}
+        },
+        "runtime": {
+          "lib/CloudrailSI.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR/2.4.0": {
+        "type": "package"
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -2651,6 +2667,27 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "OpenSSL.PrivateKeyDecoder/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll": {}
+        }
+      },
+      "OpenSSL.X509Certificate2.Provider/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "OpenSSL.PrivateKeyDecoder": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4346,6 +4383,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "YouTube.Api/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "OpenSSL.X509Certificate2.Provider": "1.2.0"
+        },
+        "compile": {
+          "lib/CloudrailSI.dll": {}
+        },
+        "runtime": {
+          "lib/CloudrailSI.dll": {}
+        }
       }
     }
   },
@@ -4360,6 +4410,29 @@
         "alexa.net.1.5.7.nupkg.sha512",
         "alexa.net.nuspec",
         "lib/netstandard1.6/Alexa.NET.dll"
+      ]
+    },
+    "CloudRail.SDK/1.0.7": {
+      "sha512": "JBxvTaYYBX3Ba05HKu5qlZtQhQ3cMSVfs4r3K3cMjesTVZW6qnpN4KMoTmMxL2L/xvqxHW0Q7FQamUdUNc9AhQ==",
+      "type": "package",
+      "path": "cloudrail.sdk/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudrail.sdk.1.0.7.nupkg.sha512",
+        "cloudrail.sdk.nuspec",
+        "lib/CloudrailSI.dll"
+      ]
+    },
+    "Microsoft.AspNet.SignalR/2.4.0": {
+      "sha512": "8kEC6wIDQSIGNlo2bSE88w1y67OmiJkEFvpj8g6n/grsvzFW/ZawcFTYLRLSP0hTpHaMkQ6k9w3/oBVTYskozA==",
+      "type": "package",
+      "path": "microsoft.aspnet.signalr/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "microsoft.aspnet.signalr.2.4.0.nupkg.sha512",
+        "microsoft.aspnet.signalr.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -7138,6 +7211,48 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "OpenSSL.PrivateKeyDecoder/1.3.0": {
+      "sha512": "jTSXZBIjm2uWUAKLqUqdzzFByWVgkxqbMj0LgYCXTerKuRWRKWAOOAOhWP5samqu7deUJAvB5EYLa9noCZUWpQ==",
+      "type": "package",
+      "path": "openssl.privatekeydecoder/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/OpenSSL.PrivateKeyDecoder.dll",
+        "lib/net20/OpenSSL.PrivateKeyDecoder.xml",
+        "lib/net35/OpenSSL.PrivateKeyDecoder.dll",
+        "lib/net35/OpenSSL.PrivateKeyDecoder.xml",
+        "lib/net45/OpenSSL.PrivateKeyDecoder.dll",
+        "lib/net45/OpenSSL.PrivateKeyDecoder.xml",
+        "lib/netstandard1.3/OpenSSL.PrivateKeyDecoder.dll",
+        "lib/netstandard1.3/OpenSSL.PrivateKeyDecoder.xml",
+        "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll",
+        "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.xml",
+        "openssl.privatekeydecoder.1.3.0.nupkg.sha512",
+        "openssl.privatekeydecoder.nuspec"
+      ]
+    },
+    "OpenSSL.X509Certificate2.Provider/1.3.0": {
+      "sha512": "G9hAaEJ94GJFr16/vkeusq6Nfm5rtPYQ34uNwpUdUKQeNL9zT8B0F1+Z9C55IXl62U9N+e4wDpYTDGz8HrcprA==",
+      "type": "package",
+      "path": "openssl.x509certificate2.provider/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/OpenSSL.X509Certificate2.Provider.dll",
+        "lib/net20/OpenSSL.X509Certificate2.Provider.xml",
+        "lib/net35/OpenSSL.X509Certificate2.Provider.dll",
+        "lib/net35/OpenSSL.X509Certificate2.Provider.xml",
+        "lib/net45/OpenSSL.X509Certificate2.Provider.dll",
+        "lib/net45/OpenSSL.X509Certificate2.Provider.xml",
+        "lib/netstandard1.3/OpenSSL.X509Certificate2.Provider.dll",
+        "lib/netstandard1.3/OpenSSL.X509Certificate2.Provider.xml",
+        "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll",
+        "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.xml",
+        "openssl.x509certificate2.provider.1.3.0.nupkg.sha512",
+        "openssl.x509certificate2.provider.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -11809,13 +11924,29 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "YouTube.Api/1.0.7": {
+      "sha512": "adOQtjOzyWQB3VozNfCnY2BbYMc49Ckn3RQuBo9nFra7Rx9w0IwTlQZ9N4+Hx4WumFyT2kLgxcVZImIbsFdzHw==",
+      "type": "package",
+      "path": "youtube.api/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/CloudrailSI.dll",
+        "youtube.api.1.0.7.nupkg.sha512",
+        "youtube.api.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Alexa.NET >= 1.5.7",
+      "CloudRail.SDK >= 1.0.7",
+      "Microsoft.AspNet.SignalR >= 2.4.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "OpenSSL.X509Certificate2.Provider >= 1.3.0",
+      "YouTube.Api >= 1.0.7"
     ]
   },
   "packageFolders": {
@@ -11863,6 +11994,14 @@
             "target": "Package",
             "version": "[1.5.7, )"
           },
+          "CloudRail.SDK": {
+            "target": "Package",
+            "version": "[1.0.7, )"
+          },
+          "Microsoft.AspNet.SignalR": {
+            "target": "Package",
+            "version": "[2.4.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "target": "Package",
             "version": "[2.1.1, )"
@@ -11871,6 +12010,14 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "OpenSSL.X509Certificate2.Provider": {
+            "target": "Package",
+            "version": "[1.3.0, )"
+          },
+          "YouTube.Api": {
+            "target": "Package",
+            "version": "[1.0.7, )"
           }
         },
         "imports": [
@@ -11880,5 +12027,27 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'CloudRail.SDK 1.0.7' a été restauré en utilisant '.NETFramework,Version=v4.6.1' au lieu du framework cible du projet '.NETCoreApp,Version=v2.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "CloudRail.SDK",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'YouTube.Api 1.0.7' a été restauré en utilisant '.NETFramework,Version=v4.6.1' au lieu du framework cible du projet '.NETCoreApp,Version=v2.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "YouTube.Api",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

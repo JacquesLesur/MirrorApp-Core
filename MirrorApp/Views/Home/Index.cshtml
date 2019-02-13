@@ -11,7 +11,7 @@
                 <label for="heure">@DateTime.Now.ToString("t")</label>
             </div>
             <div class="col-md-4 d-flex flex-column text-center">
-                
+
                 <div class="d-block " for="Meteo" style="font-size:15px">@ViewBag.weather[0]</div>
                 <img class="d-block " src="@ViewBag.weather[2]" runat="server" alt="meteo" />
                 <div class="d-block " for="Meteo">@ViewBag.weather[1]</div>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 news">
+        <div class="col-sm-6 news">
             <label for="news">News</label>
             <ul class="nav flex-column">
                 @foreach (Article article in ViewBag.news)
@@ -30,19 +30,30 @@
                         <a>@article.description</a>
                     </li>
                 }
-                
+
             </ul>
+        </div>
+        <div class="col-sm-6 second_part">
+            <a>Alexa recherche actuellement votre vidéo YouTube</a>
+            @if (ViewBag.youtbeUrl != "")
+            {
+                <iframe id="linkYoutube" width="420" height="315"
+                        src=""></iframe>
+            }
         </div>
     </div>
 </div>
 <footer class="footer" style="background-color:black">
     <div class="row">
         <div class="col-sm-12">
+            @*<input type="button" id="sendButton" value="Send Message" />*@
+           @* <label id="linkYoutube"></label>*@
             <label for="citation">@ViewBag.kaamelott</label>
         </div>
     </div>
 </footer>
-
+<script src="~/lib/signalr.js"></script>
+<script src="~/js/videolinkHub.js"></script>
 <style>
 
     body {

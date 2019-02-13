@@ -21,6 +21,7 @@ namespace MirrorApp.Controllers
             ViewBag.kaamelott = Kaamelott();
             ViewBag.weather = Weather();
             ViewBag.news = News().articles;
+            ViewBag.youtubeUrl = Config.youtubeUrl;
             return View();
         }
         private NewsApi News()

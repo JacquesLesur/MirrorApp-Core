@@ -25,6 +25,8 @@ namespace MirrorApp
         public static readonly API newsUrl = new API("https://newsapi.org/v2/top-headlines?", apiNewsParameters);
         public static readonly string kaamelottUrl = "https://kaamelott.chaudie.re/api/random";
 
-
+        public static readonly string youtubeApiKey = "AIzaSyCtpfl0svD_0w4hwQk4KqPgKidcBRxqS2o";
+        public static readonly string cloudRailApiKey = "5c61ad4d21b62e52282c64be";
+        public static string youtubeUrl = "";
     }
 }

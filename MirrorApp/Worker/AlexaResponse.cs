@@ -6,6 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Com.CloudRail.SI;
+using Com.CloudRail.SI.Services;
+using Com.CloudRail.SI.ServiceCode.Commands.CodeRedirect;
+using Com.CloudRail.SI.Types;
+using MirrorApp.Hubs;
 
 namespace MirrorApp.Worker
 {
@@ -36,7 +41,7 @@ namespace MirrorApp.Worker
                 switch (intentRequest.Intent.Name)
                 {
                     case "youtube":
-                        YoutubeIntent();
+                        YoutubeIntentAsync();
                         break;
                     case "AMAZON.StopIntent":
                         StopIntent();
@@ -57,17 +62,40 @@ namespace MirrorApp.Worker
             response.Response.ShouldEndSession = false;
         }
 
-        private void YoutubeIntent()
+        private async Task YoutubeIntentAsync()
         {
+            CloudRail.AppKey = Config.cloudRailApiKey;
+
+            YouTube service = new YouTube(
+                new LocalReceiver(8082),
+                Config.youtubeApiKey
+
+            );
+
+            
             string youtubeur = intentRequest.Intent.Slots.First().Value.Value;
             if (youtubeur != null)
             {
                 response = ResponseBuilder.Tell("Dac je lance la vidéo de " + youtubeur);
+                List<VideoMetaData> listVideoYoutube = service.SearchVideos(
+                youtubeur,
+                50,
+                10
+                );
+                Random rnd = new Random();
+                int numYtVideo = rnd.Next(listVideoYoutube.Count);
+                Config.youtubeUrl = "https://www.youtube.com/watch?v=" + listVideoYoutube[numYtVideo].GetId();
             }
             else
             {
                 response = ResponseBuilder.Tell("Je ne conais pas ce youtubeur");
             }
+
+
+            var context = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
+
+            VideolinkHub videolinkHub = new VideolinkHub();
+             await videolinkHub.ChangeVideoLink(Config.youtubeUrl);
             response.Response.ShouldEndSession = false;
         }
 
