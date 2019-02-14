@@ -14,7 +14,7 @@
 
                 <div class="d-block " for="Meteo" style="font-size:15px">@ViewBag.weather[0]</div>
                 <img class="d-block " src="@ViewBag.weather[2]" runat="server" alt="meteo" />
-                <div class="d-block " for="Meteo">@ViewBag.weather[1]</div>
+                <div class="d-block" for="Meteo">@ViewBag.weather[1]</div>
 
             </div>
         </div>
@@ -34,7 +34,6 @@
             </ul>
         </div>
         <div class="col-sm-6 second_part">
-            <a>Alexa recherche actuellement votre vidéo YouTube</a>
             @if (ViewBag.youtbeUrl != "")
             {
                 <iframe id="linkYoutube" width="420" height="315"
@@ -46,19 +45,26 @@
 <footer class="footer" style="background-color:black">
     <div class="row">
         <div class="col-sm-12">
-            @*<input type="button" id="sendButton" value="Send Message" />*@
-           @* <label id="linkYoutube"></label>*@
-            <label for="citation">@ViewBag.kaamelott</label>
+            <label id="citation" for="citation"></label>
         </div>
     </div>
 </footer>
 <script src="~/lib/signalr.js"></script>
-<script src="~/js/videolinkHub.js"></script>
+<script src="~/js/videolinkHub.js">
+   
+</script>
+<script>
+    window.setInterval(function () {
+        call();
+    }, 1000);
+</script>
 <style>
 
     body {
         background-color: black;
         color: white;
+        max-height: 100vh;
+        overflow: hidden;
     }
 
         body a {
@@ -76,8 +82,8 @@
     }
 
         .header img {
-            height: 100px;
-            width: 100px;
+            /*height: 100px;*/
+            width: 150px;
         }
 
         .header label {
@@ -107,7 +113,7 @@
     }
 
         footer label {
-            padding-top: 3%;
+            padding-top: 1%;
         }
 </style>
 

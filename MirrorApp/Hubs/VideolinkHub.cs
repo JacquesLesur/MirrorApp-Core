@@ -14,9 +14,13 @@ namespace MirrorApp.Hubs
         {
             return Context.ConnectionId;
         }
-        public async Task ChangeVideoLink(string videoLink)
+        public async Task ChangeVideoLink()
         {
-            await Clients.All.SendAsync("ChangeLinkJs", videoLink);
+            await Clients.All.SendAsync("ChangeLinkJs", Config.youtubeUrl);
+        }
+        public async Task ChangeCitation()
+        {
+            await Clients.All.SendAsync("ChangeCitationJs", Config.citation);
         }
     }
 }

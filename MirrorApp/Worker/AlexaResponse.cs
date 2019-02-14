@@ -11,6 +11,7 @@ using Com.CloudRail.SI.Services;
 using Com.CloudRail.SI.ServiceCode.Commands.CodeRedirect;
 using Com.CloudRail.SI.Types;
 using MirrorApp.Hubs;
+using MirrorApp.Controllers;
 
 namespace MirrorApp.Worker
 {
@@ -59,6 +60,8 @@ namespace MirrorApp.Worker
         private void KaamelottIntent()
         {
             response = ResponseBuilder.Tell("Je rafraichis la citation de Kaamelott");
+            HomeController homeController = new HomeController();
+            Config.citation =homeController.Kaamelott();
             response.Response.ShouldEndSession = false;
         }
 
@@ -84,7 +87,7 @@ namespace MirrorApp.Worker
                 );
                 Random rnd = new Random();
                 int numYtVideo = rnd.Next(listVideoYoutube.Count);
-                Config.youtubeUrl = "https://www.youtube.com/watch?v=" + listVideoYoutube[numYtVideo].GetId();
+                Config.youtubeUrl = "https://www.youtube.com/embed/" + listVideoYoutube[numYtVideo].GetId()+ "?autoplay=1";
             }
             else
             {
@@ -92,10 +95,9 @@ namespace MirrorApp.Worker
             }
 
 
-            var context = GlobalHost.ConnectionManager.GetHubContext<MyHub>();
 
-            VideolinkHub videolinkHub = new VideolinkHub();
-             await videolinkHub.ChangeVideoLink(Config.youtubeUrl);
+            //VideolinkHub videolinkHub = new VideolinkHub();
+            // await videolinkHub.ChangeVideoLink(Config.youtubeUrl);
             response.Response.ShouldEndSession = false;
         }
 

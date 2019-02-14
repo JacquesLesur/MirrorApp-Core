@@ -19,6 +19,7 @@ namespace MirrorApp.Controllers
         {
             
             ViewBag.kaamelott = Kaamelott();
+            Config.citation = ViewBag.kaamelott;
             ViewBag.weather = Weather();
             ViewBag.news = News().articles;
             ViewBag.youtubeUrl = Config.youtubeUrl;
@@ -64,7 +65,7 @@ namespace MirrorApp.Controllers
             }
             return returnStrings;
         }
-        private string Kaamelott()
+        public string Kaamelott()
         {
 
             // Parse the response body.
